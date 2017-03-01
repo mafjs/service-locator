@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "description": "service locator",
   "main": "index.js",
-  "files": [],
+  "files": [
+      "src",
+      "index.js"
+  ],
   "scripts": {
     "test": "./node_modules/.bin/tap test/unit/**/*.js -J --coverage",
     "test:fast": "./node_modules/.bin/tap test/unit/**/*.js -J",
