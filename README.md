@@ -2,6 +2,11 @@
 
 clean simple service locator
 
+[![bitHound Overall Score](https://www.bithound.io/github/mafjs/service-locator/badges/score.svg)](https://www.bithound.io/github/mafjs/service-locator)
+[![bitHound Dependencies](https://www.bithound.io/github/mafjs/service-locator/badges/dependencies.svg)](https://www.bithound.io/github/mafjs/service-locator/master/dependencies/npm)
+[![Build Status](https://travis-ci.org/mafjs/service-locator.svg?branch=master)](https://travis-ci.org/mafjs/service-locator)
+[![Coverage Status](https://coveralls.io/repos/github/mafjs/service-locator/badge.svg?branch=master)](https://coveralls.io/github/mafjs/service-locator?branch=master)
+
 # install
 
 ```
