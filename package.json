@@ -1,0 +1,41 @@
+{
+  "name": "maf-service-locator",
+  "version": "0.0.0",
+  "description": "service locator",
+  "main": "index.js",
+  "files": [],
+  "scripts": {
+    "test": "./node_modules/.bin/tap test/unit/**/*.js -J --coverage",
+    "test:fast": "./node_modules/.bin/tap test/unit/**/*.js -J",
+    "test:cov": "npm test -- --coverage-report=html",
+    "postversion": "git push origin && git push --tags"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mafjs/service-locator.git"
+  },
+  "keywords": [
+    "maf"
+  ],
+  "author": "alekzonder <alekzonder@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mafjs/service-locator/issues"
+  },
+  "homepage": "https://github.com/mafjs/service-locator#readme",
+  "devDependencies": {
+    "coveralls": "^2.11.16",
+    "eslint": "^3.16.1",
+    "tap": "^10.2.2"
+  },
+  "dependencies": {},
+  "nyc": {
+    "all": true,
+    "include": [
+      "src/*js"
+    ]
+  }
+}
