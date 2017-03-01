@@ -1,11 +1,11 @@
 {
   "name": "maf-service-locator",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "service locator",
   "main": "index.js",
   "files": [
-      "src",
-      "index.js"
+    "src",
+    "index.js"
   ],
   "scripts": {
     "test": "./node_modules/.bin/tap test/unit/**/*.js -J --coverage",
