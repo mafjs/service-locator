@@ -7,6 +7,8 @@ clean simple service locator
 [![Build Status](https://travis-ci.org/mafjs/service-locator.svg?branch=master)](https://travis-ci.org/mafjs/service-locator)
 [![Coverage Status](https://coveralls.io/repos/github/mafjs/service-locator/badge.svg?branch=master)](https://coveralls.io/github/mafjs/service-locator?branch=master)
 
+[![NPM](https://nodei.co/npm/maf-service-locator.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/maf-service-locator/)
+
 # install
 
 ```
