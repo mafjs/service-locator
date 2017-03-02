@@ -1,50 +1,27 @@
-# maf-service-locator Public API
+# maf-service-locator 0.1.0 API
 
-```js
+- [ServiceLocator](#servicelocator)
+    - [constructor (\[logger\])](#constructor-logger)
+    - [set (name, callback)](#set-name-callback)
+    - [get (name)](#get-name)
 
-class ServiceLocator {
+## ServiceLocator
 
-    /**
-     * @param {?Logger} logger optional. if passed, should have debug method
-     */
-    constructor (logger) {}
+### `constructor ([logger])`
 
-    /**
-     * set new service callback
-     *
-     * @param {String}   name
-     * @param {Function} callback
-     * @return {this}
-     */
-    set (name, callback) {}
+- `logger` - optional. if passed, should have debug method
 
-    /**
-     * return service by name or null if not exists
-     *
-     * create if not exists and callback present
-     *
-     * @param {String} name
-     * @return {*|Null}
-     */
-    get (name) {}
-}
+### `set (name, callback)`
 
-```
+set new service callback
 
-# usage
+- `name` - String. name of service
+- `callback` - Function. service creation callback
 
-```js
+return `this`
 
-var ServiceLocator = require('maf-service-locator');
-var TaskApi = require('./api/Tasks');
-var logger = require('./Logger').getLogger();
+### `get (name)`
 
-var api = new ServiceLocator(logger);
+- `name` - String. name of service
 
-api.set('tasks', function () {
-    return new TaskApi();
-});
-
-var task = api.get('tasks').getOneById(1);
-
-```
+return service object or null, if service not exists

@@ -15,6 +15,8 @@ clean simple service locator
 npm i maf-service-locator
 ```
 
+can be used in node.js and in browsers
+
 # usage
 
 ```js
@@ -34,17 +36,7 @@ var task = api.get('tasks').getOneById(1);
 
 # API
 
-## constructor (logger)
-
-pass logger if need debug service creation
-
-## set (name \<String>, callback \<Function>)
-
-set new service name and creation callback
-
-## get (name \<String>)
-
-get service by name or null if not exists
+see [docs/api.md](docs/api.md)
 
 # LICENSE
 
