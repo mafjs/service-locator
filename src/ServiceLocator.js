@@ -34,7 +34,7 @@ ServiceLocator.prototype.set = function (name, callback) {
 };
 
 /**
- * get service by name
+ * return service by name or null if not exists
  *
  * @param {String} name
  * @return {*}
