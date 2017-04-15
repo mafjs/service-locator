@@ -11,7 +11,8 @@
     "test": "./node_modules/.bin/tap test/unit/**/*.js -J --coverage",
     "test:fast": "./node_modules/.bin/tap test/unit/**/*.js -J",
     "test:cov": "npm test -- --coverage-report=json-summary",
-    "postversion": "git push origin && git push --tags"
+    "postversion": "git push origin && git push --tags",
+    "toc": "node ./build/docToc.js"
   },
   "engines": {
     "node": ">=4"
@@ -32,6 +33,7 @@
   "devDependencies": {
     "coveralls": "^2.11.16",
     "eslint": "^3.16.1",
+    "markdown-toc": "1.x",
     "tap": "^10.2.2"
   },
   "dependencies": {},
