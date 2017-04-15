@@ -59,6 +59,15 @@ ServiceLocator.prototype.get = function (name) {
 };
 
 /**
+ * get names of services
+ *
+ * @return {Array}
+ */
+ServiceLocator.prototype.getNames = function () {
+    return Object.keys(this._callbacks);
+};
+
+/**
  * create service with callback
  *
  * @private

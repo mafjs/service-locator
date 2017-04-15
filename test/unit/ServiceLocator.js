@@ -177,3 +177,24 @@ t.test('#get: should return service if callback already called', function (t) {
     t.end();
 
 });
+
+
+t.test('#getNames: should return name of setted services', function (t) {
+    var locator = new ServiceLocator();
+
+    locator.set('test1', function () {
+
+    });
+
+    locator.set('test2', function () {
+
+    });
+
+    locator.set('test0', function () {
+
+    });
+
+    t.same(locator.getNames(), ['test1', 'test2', 'test0']);
+
+    t.end();
+});
