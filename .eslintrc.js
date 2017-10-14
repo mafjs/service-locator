@@ -155,7 +155,7 @@ module.exports = {
         'array-bracket-spacing': ['error', 'never'],
 
         // http://eslint.org/docs/rules/space-before-function-paren
-        'space-before-function-paren': ['error', 'always'],
+        'space-before-function-paren': ['error', 'never'],
 
         // http://eslint.org/docs/rules/space-before-blocks
         'space-before-blocks': ['error', 'always'],
