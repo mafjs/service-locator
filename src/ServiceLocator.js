@@ -51,7 +51,7 @@ ServiceLocator.prototype.get = function(name) {
 
     this._debug('get service by name "' + name + '"');
 
-    let service = null;
+    var service = null;
 
     if (this._services[name]) {
         service = this._services[name];

@@ -1,6 +1,6 @@
-let t = require('tap');
+var t = require('tap');
 
-let ServiceLocator = require(__dirname + '/../../src/ServiceLocator');
+var ServiceLocator = require(__dirname + '/../../src/ServiceLocator');
 
 
 t.test('#constructor: should create without errors', function(t) {
@@ -11,11 +11,11 @@ t.test('#constructor: should create without errors', function(t) {
 
 
 t.test('#constructor:should create without errors when logger with debug method passed', function(t) {
-    let logger = {
+    var logger = {
         debug: function() {}
     };
 
-    let locator = new ServiceLocator(logger);
+    var locator = new ServiceLocator(logger);
 
     locator.get('test');
 
@@ -24,7 +24,7 @@ t.test('#constructor:should create without errors when logger with debug method 
 
 
 t.test('#constructor: should throw error when logger has no debug method', function(t) {
-    let logger = {};
+    var logger = {};
 
     t.throws(
         function() {
@@ -38,9 +38,9 @@ t.test('#constructor: should throw error when logger has no debug method', funct
 
 
 t.test('#set: should set new service', function(t) {
-    let locator = new ServiceLocator();
+    var locator = new ServiceLocator();
 
-    let result = locator.set('test', function() {});
+    var result = locator.set('test', function() {});
 
     t.ok(result instanceof ServiceLocator);
 
@@ -48,7 +48,7 @@ t.test('#set: should set new service', function(t) {
 });
 
 t.test('#set: should throw error if name of service is not a string', function(t) {
-    let locator = new ServiceLocator();
+    var locator = new ServiceLocator();
 
     t.throws(
         function() {
@@ -75,7 +75,7 @@ t.test('#set: should throw error if name of service is not a string', function(t
 });
 
 t.test('#set: should throw error if service callback is not a function', function(t) {
-    let locator = new ServiceLocator();
+    var locator = new ServiceLocator();
 
     t.throws(
         function() {
@@ -102,7 +102,7 @@ t.test('#set: should throw error if service callback is not a function', functio
 });
 
 t.test('#get: should throw error if service name is not a string', function(t) {
-    let locator = new ServiceLocator();
+    var locator = new ServiceLocator();
 
     t.throws(
         function() {
@@ -129,7 +129,7 @@ t.test('#get: should throw error if service name is not a string', function(t) {
 });
 
 t.test('#get: should return null if no service', function(t) {
-    let locator = new ServiceLocator();
+    var locator = new ServiceLocator();
 
     t.ok(locator.get('test') === null);
 
@@ -137,7 +137,7 @@ t.test('#get: should return null if no service', function(t) {
 });
 
 t.test('#get: should create and return service if callback exists', function(t) {
-    let locator = new ServiceLocator();
+    var locator = new ServiceLocator();
 
     locator.set('test', function() {
         return {
@@ -145,7 +145,7 @@ t.test('#get: should create and return service if callback exists', function(t) 
         };
     });
 
-    let service = locator.get('test');
+    var service = locator.get('test');
 
     t.ok(typeof service === 'object');
     t.ok(service.name === 'test service name');
@@ -154,7 +154,7 @@ t.test('#get: should create and return service if callback exists', function(t) 
 });
 
 t.test('#get: should return service if callback already called', function(t) {
-    let locator = new ServiceLocator();
+    var locator = new ServiceLocator();
 
     locator.set('test', function() {
         return {
@@ -164,7 +164,7 @@ t.test('#get: should return service if callback already called', function(t) {
 
     locator.get('test');
 
-    let service = locator.get('test');
+    var service = locator.get('test');
 
     t.ok(typeof service === 'object');
     t.ok(service.name === 'test service name');
@@ -174,7 +174,7 @@ t.test('#get: should return service if callback already called', function(t) {
 
 
 t.test('#getNames: should return name of setted services', function(t) {
-    let locator = new ServiceLocator();
+    var locator = new ServiceLocator();
 
     locator.set('test1', function() {
 
@@ -194,7 +194,7 @@ t.test('#getNames: should return name of setted services', function(t) {
 });
 
 t.test('#get: should return service using getter', function(t) {
-    let locator = new ServiceLocator();
+    var locator = new ServiceLocator();
 
     locator.set('test1', function() {
         return {id: 1};
