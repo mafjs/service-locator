@@ -198,3 +198,19 @@ t.test('#getNames: should return name of setted services', function (t) {
 
     t.end();
 });
+
+t.test('#get: should return service using getter', function (t) {
+    var locator = new ServiceLocator();
+
+    locator.set('test1', function () {
+        return {id: 1};
+    });
+
+    locator.set('test2', function () {
+        return {id: 2};
+    });
+
+    t.same(locator.test1, {id: 1});
+    t.same(locator.test2, {id: 2});
+    t.end();
+});

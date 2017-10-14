@@ -30,6 +30,12 @@ ServiceLocator.prototype.set = function (name, callback) {
 
     this._callbacks[name] = callback;
 
+    Object.defineProperty(this, name, {
+        get: () => {
+            return this.get(name);
+        }
+    });
+
     return this;
 };
 
