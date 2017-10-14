@@ -1,7 +1,7 @@
 /**
  * @param {?Logger} logger
  */
-function ServiceLocator (logger) {
+function ServiceLocator(logger) {
     this._logger = this._validateLogger(logger);
     this._callbacks = {};
     this._services = {};
@@ -14,8 +14,7 @@ function ServiceLocator (logger) {
  * @param {Function} callback
  * @return {this}
  */
-ServiceLocator.prototype.set = function (name, callback) {
-
+ServiceLocator.prototype.set = function(name, callback) {
     if (typeof name !== 'string') {
         throw this._createError('set method, name should be a string');
     }
@@ -45,14 +44,14 @@ ServiceLocator.prototype.set = function (name, callback) {
  * @param {String} name
  * @return {*}
  */
-ServiceLocator.prototype.get = function (name) {
+ServiceLocator.prototype.get = function(name) {
     if (typeof name !== 'string') {
         throw this._createError('get method, name should be a string');
     }
 
     this._debug('get service by name "' + name + '"');
 
-    var service = null;
+    let service = null;
 
     if (this._services[name]) {
         service = this._services[name];
@@ -69,7 +68,7 @@ ServiceLocator.prototype.get = function (name) {
  *
  * @return {Array}
  */
-ServiceLocator.prototype.getNames = function () {
+ServiceLocator.prototype.getNames = function() {
     return Object.keys(this._callbacks);
 };
 
@@ -80,8 +79,7 @@ ServiceLocator.prototype.getNames = function () {
  * @param {String} name
  * @return {*}
  */
-ServiceLocator.prototype._createService = function (name) {
-
+ServiceLocator.prototype._createService = function(name) {
     if (typeof this._callbacks[name] === 'undefined') {
         this._debug('no callback for service "' + name + '"');
         return null;
@@ -92,7 +90,6 @@ ServiceLocator.prototype._createService = function (name) {
     this._debug('service created "' + name + '"');
 
     return this._services[name];
-
 };
 
 /**
@@ -102,7 +99,7 @@ ServiceLocator.prototype._createService = function (name) {
  * @param {?Logger} logger
  * @return {Logger|Null}
  */
-ServiceLocator.prototype._validateLogger = function (logger) {
+ServiceLocator.prototype._validateLogger = function(logger) {
     if (!logger) {
         return null;
     }
@@ -121,7 +118,7 @@ ServiceLocator.prototype._validateLogger = function (logger) {
  * @param {String} message
  * @return {Error}
  */
-ServiceLocator.prototype._createError = function (message) {
+ServiceLocator.prototype._createError = function(message) {
     return new Error('maf-service-locator: ' + message);
 };
 
@@ -130,16 +127,16 @@ ServiceLocator.prototype._createError = function (message) {
  *
  * @private
  */
-ServiceLocator.prototype._debug = function () {
+ServiceLocator.prototype._debug = function() {
     if (
         this._logger &&
         this._logger.debug &&
         typeof this._logger.debug === 'function'
     ) {
+        // eslint-disable-next-line prefer-rest-params, prefer-spread
         this._logger.debug.apply(this._logger, arguments);
     }
 };
-
 
 
 module.exports = ServiceLocator;

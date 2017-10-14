@@ -1,16 +1,16 @@
-var ServiceLocator = require('../index');
+let ServiceLocator = require('../index');
 
-var logger = {
-    debug: function () {
-        console.log.apply(console, arguments);
+let logger = {
+    debug: function(...args) {
+        console.log(...args); // eslint-disable-line no-console
     }
 };
 
-var api = new ServiceLocator(logger);
+let api = new ServiceLocator(logger);
 
-api.set('tasks', function () {
+api.set('tasks', function() {
     return {
-        getOneById: function (id) {
+        getOneById: function(id) {
             return {
                 id: id
             };
@@ -18,5 +18,5 @@ api.set('tasks', function () {
     };
 });
 
-console.log(api.get('tasks').getOneById(1));
-console.log(api.get('tasks').getOneById(1));
+console.log(api.get('tasks').getOneById(1)); // eslint-disable-line no-console
+console.log(api.get('tasks').getOneById(1)); // eslint-disable-line no-console

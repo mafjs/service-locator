@@ -12,6 +12,8 @@
     "test:fast": "./node_modules/.bin/tap test/unit/**/*.js -J",
     "test:cov": "npm test -- --coverage-report=json-summary",
     "postversion": "git push origin && git push --tags",
+    "lint": "eslint -c .eslintrc.js --ignore-path .gitignore .",
+    "lint:fix": "npm run lint -- --fix",
     "toc": "node ./build/docToc.js"
   },
   "engines": {
